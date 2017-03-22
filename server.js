@@ -20,7 +20,8 @@ app.listen(port, () => {
 });
 
 app.get('/*', function (req, res) {
-    console.log(req.originalUrl);   
+    console.log(req.originalUrl); 
+  res.writeHead(200, {'Content-Type': 'application/json'});  
   res.send('{"name":"karthik"}')
 })
 
