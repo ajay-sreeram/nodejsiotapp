@@ -1,0 +1,13 @@
+{
+  "name": "azure-app-service-express",
+  "version": "1.0.0",
+  "description": "A simple Express boilerplate which helps demonstrate how to deploy Node.js applications to Azure App Service",
+  "main": "./server.js",
+  "dependencies": {
+    "express": "~4.14.1",
+    "pug": "~2.0.0-beta9"
+  },
+  "engines": {
+    "node": "~6.9.4"
+  }
+}
