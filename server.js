@@ -13,11 +13,16 @@ app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
 
 // Expose a default route, and begin listening for requests.
-app.get("/", require("./routes/index"));
+//app.get("/", require("./routes/index"));
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
+
+app.get('/*', function (req, res) {
+    console.log(req.originalUrl);   
+  res.send('{"name":"karthik"}')
+})
 
 // Potential next steps:
 // ---------------------
