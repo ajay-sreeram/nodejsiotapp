@@ -25,6 +25,12 @@ app.get('/*', function (req, res) {
   res.send('{"name":"karthik"}')
 })
 
+app.post('/*', function (req, res) {
+    console.log(req.originalUrl); 
+  res.writeHead(200, {'Content-Type': 'application/json'});  
+  res.send('{"name":"keyan"}')
+})
+
 // Potential next steps:
 // ---------------------
 // 1) Update the views/stylesheets to get a feel for using Pug and static resources
