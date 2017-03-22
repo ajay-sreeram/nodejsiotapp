@@ -21,15 +21,15 @@ app.listen(port, () => {
 
 app.get('/*', function (req, res) {
     console.log(req.originalUrl); 
-  res.writeHead(200, {'Content-Type': 'application/json'});  
+  res.setHeader('Content-Type','application/json');  
   res.send('{"name":"karthik"}')
-})
+});
 
 app.post('/*', function (req, res) {
     console.log(req.originalUrl); 
-  res.writeHead(200, {'Content-Type': 'application/json'});  
+  res.setHeader('Content-Type', 'application/json');  
   res.send('{"name":"keyan"}')
-})
+});
 
 // Potential next steps:
 // ---------------------
