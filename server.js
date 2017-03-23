@@ -58,12 +58,11 @@ app.post('/*', function (req, res) {
   console.log('ORIGINALURL:',util.inspect(req.originalUrl, {showHidden: true, depth: null}))
   console.log('PARAMS:',util.inspect(req.params, {showHidden: true, depth: null}))
   console.log('PATH:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('QUERY:',util.inspect(req.query, {showHidden: true, depth: null}))  
-
-  sendtoazure.emptyMsg();
-
+  console.log('QUERY:',util.inspect(req.query, {showHidden: true, depth: null}))    
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
+  sendtoazure.emptyMsg();
+
 });
 
 /*
