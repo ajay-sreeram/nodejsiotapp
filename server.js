@@ -43,13 +43,13 @@ var result='{'+
         '}';
  
 app.get('/*', function (req, res) {
-    console.log(req.originalUrl); 
+    console.log('GET:',req); 
   res.setHeader('Content-Type','application/json');  
   res.send(result)
 });
 
 app.post('/*', function (req, res) {
-    console.log(req.originalUrl); 
+    console.log('POST:',req); 
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
