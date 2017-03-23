@@ -19,7 +19,7 @@ app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
 
-var res='{'+
+var result='{'+
           '"version": "1.0",'+
           '"sessionAttributes": {},'+
           '"response": {'+
@@ -45,13 +45,13 @@ var res='{'+
 app.get('/*', function (req, res) {
     console.log(req.originalUrl); 
   res.setHeader('Content-Type','application/json');  
-  res.send(res)
+  res.send(result)
 });
 
 app.post('/*', function (req, res) {
     console.log(req.originalUrl); 
   res.setHeader('Content-Type', 'application/json');  
-  res.send(res)
+  res.send(result)
 });
 
 // Potential next steps:
