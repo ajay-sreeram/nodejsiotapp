@@ -40,7 +40,7 @@ var result='{'+
           '      "text": "Please tell me your favorite color by saying, my favorite color is red"'+
           '    }'+
           '  },'+
-          '  "shouldEndSession": false'+
+          '  "shouldEndSession": true'+
           '}'+
         '}';
 
