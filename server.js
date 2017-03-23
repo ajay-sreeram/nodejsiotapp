@@ -49,7 +49,7 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-    console.log('POST:',req); 
+    console.log('POST:',req.query); 
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
