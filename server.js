@@ -49,7 +49,7 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-  console.log(util.inspect(request, {showHidden: false, depth: null}))
+  console.log(util.inspect(req, {showHidden: false, depth: null}))
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
