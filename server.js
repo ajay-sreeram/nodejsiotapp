@@ -49,14 +49,14 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-  console.log('APP:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('BASEURL:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('BODY:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('ORIGINALURL:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('PARAMS:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('APP:',util.inspect(req.app, {showHidden: true, depth: null}))
+  console.log('BASEURL:',util.inspect(req.baseUrl, {showHidden: true, depth: null}))
+  console.log('BODY:',util.inspect(req.body, {showHidden: true, depth: null}))
+  console.log('ORIGINALURL:',util.inspect(req.originalUrl, {showHidden: true, depth: null}))
+  console.log('PARAMS:',util.inspect(req.params, {showHidden: true, depth: null}))
   console.log('PATH:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('PROTOCOL:',util.inspect(req.path, {showHidden: true, depth: null}))
-  console.log('QUERY:',util.inspect(req.path, {showHidden: true, depth: null}))  
+  console.log('PROTOCOL:',util.inspect(req.protocol, {showHidden: true, depth: null}))
+  console.log('QUERY:',util.inspect(req.query, {showHidden: true, depth: null}))  
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
