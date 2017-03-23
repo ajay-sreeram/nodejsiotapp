@@ -19,16 +19,39 @@ app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
 
+var res='{'+
+          '"version": "1.0",'+
+          '"sessionAttributes": {},'+
+          '"response": {'+
+          '  "outputSpeech": {'+
+          '    "type": "PlainText",'+
+          '    "text": "Welcome to the Alexa Skills Kit sample, Please tell me your favorite color by saying, my favorite color is red"'+
+          '  },'+
+          '  "card": {'+
+          '    "type": "Simple",'+
+          '    "title": "SessionSpeechlet - Welcome",'+
+          '    "content": "SessionSpeechlet - Welcome to the Alexa Skills Kit sample, Please tell me your favorite color by saying, my favorite color is red"'+
+          '  },'+
+          '  "reprompt": {'+
+          '    "outputSpeech": {'+
+          '      "type": "PlainText",'+
+          '      "text": "Please tell me your favorite color by saying, my favorite color is red"'+
+          '    }'+
+          '  },'+
+          '  "shouldEndSession": false'+
+          '}'+
+        '}';
+ 
 app.get('/*', function (req, res) {
     console.log(req.originalUrl); 
   res.setHeader('Content-Type','application/json');  
-  res.send('{"name":"karthik"}')
+  res.send(res)
 });
 
 app.post('/*', function (req, res) {
     console.log(req.originalUrl); 
   res.setHeader('Content-Type', 'application/json');  
-  res.send('{"name":"keyan"}')
+  res.send(res)
 });
 
 // Potential next steps:
