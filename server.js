@@ -40,7 +40,7 @@ var result='{'+
           '"response": {'+
           '  "outputSpeech": {'+
           '    "type": "PlainText",'+
-          '    "text": "Welcome to the Alexa Skills Kit sample, Please tell me your favorite color by saying, my favorite color is red"'+
+          '    "text": "Ok let me switch on the light for you"'+
           '  },'+
           '  "card": {'+
           '    "type": "Simple",'+
