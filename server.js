@@ -1,7 +1,7 @@
 const express = require("express"),
       path = require("path");
 const util = require("util");
-var app = require('./app');
+//var app = require('./app');
 var https = require('https');
 
 const port = process.env.PORT || 3000;
@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 // Initialize the web app instance,
 // along with the desired view engine
 // for rendering view templates.
-/*const app = express();
+const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
@@ -20,19 +20,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });
-
-*/
-
-// Expose a default route, and begin listening for requests.
-//app.get("/", require("./routes/index"));
-app.set('port', port);
-
-var options = {
-    requestCert: false,
-    rejectUnauthorized: false,
-};
-
-var server = https.createServer(options, app);
 
 var result='{'+
           '"version": "1.0",'+
@@ -56,10 +43,42 @@ var result='{'+
           '  "shouldEndSession": false'+
           '}'+
         '}';
+
+app.get('/*', function (req, res) {
+    console.log('GET:',req); 
+  res.setHeader('Content-Type','application/json');  
+  res.send(result)
+});
+
+app.post('/*', function (req, res) {
+  console.log('BODY:',util.inspect(req.body, {showHidden: true, depth: null}))
+  console.log('BASEURL:',util.inspect(req.baseUrl, {showHidden: true, depth: null}))
+  console.log('ORIGINALURL:',util.inspect(req.originalUrl, {showHidden: true, depth: null}))
+  console.log('PARAMS:',util.inspect(req.params, {showHidden: true, depth: null}))
+  console.log('PATH:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('QUERY:',util.inspect(req.query, {showHidden: true, depth: null}))  
+  res.setHeader('Content-Type', 'application/json');  
+  res.send(result)
+});
+
+/*
+// Expose a default route, and begin listening for requests.
+//app.get("/", require("./routes/index"));
+app.set('port', port);
+
+var options = {
+    requestCert: false,
+    rejectUnauthorized: false,
+};
+
+var server = https.createServer(options, app);
+
+
  
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+*/
 
 /**
  * Event listener for HTTP server "error" event.
