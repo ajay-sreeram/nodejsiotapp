@@ -49,7 +49,14 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-  console.log(util.inspect(req, {showHidden: false, depth: null}))
+  console.log('APP:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('BASEURL:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('BODY:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('ORIGINALURL:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('PARAMS:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('PATH:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('PROTOCOL:',util.inspect(req.path, {showHidden: true, depth: null}))
+  console.log('QUERY:',util.inspect(req.path, {showHidden: true, depth: null}))  
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
