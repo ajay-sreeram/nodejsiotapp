@@ -4,8 +4,9 @@
   "description": "A simple Express boilerplate which helps demonstrate how to deploy Node.js applications to Azure App Service",
   "main": "./server.js",
   "dependencies": {
-    "express": "~4.14.1",    
-    "pug": "~2.0.0-beta9"
+    "express": "~4.14.1",
+    "azure-iot-device": "^1.1.7",
+    "azure-iot-device-mqtt": "^1.1.7"
   },
   "engines": {
     "node": "~6.9.4"

@@ -4,6 +4,8 @@ const util = require("util");
 //var app = require('./app');
 var https = require('https');
 
+var sendtoazure = require('./sendtoazure.js');
+
 const port = process.env.PORT || 3000;
 
 // Initialize the web app instance,
@@ -57,6 +59,9 @@ app.post('/*', function (req, res) {
   console.log('PARAMS:',util.inspect(req.params, {showHidden: true, depth: null}))
   console.log('PATH:',util.inspect(req.path, {showHidden: true, depth: null}))
   console.log('QUERY:',util.inspect(req.query, {showHidden: true, depth: null}))  
+
+  sendtoazure.emptyMsg();
+
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
