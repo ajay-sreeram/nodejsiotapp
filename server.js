@@ -1,6 +1,6 @@
 const express = require("express"),
       path = require("path");
-
+const util = require("util");
 // Initialize the web app instance,
 // along with the desired view engine
 // for rendering view templates.
@@ -49,7 +49,7 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-    console.log('POST:',req.query); 
+  console.log(util.inspect(request, {showHidden: false, depth: null}))
   res.setHeader('Content-Type', 'application/json');  
   res.send(result)
 });
