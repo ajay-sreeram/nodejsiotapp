@@ -49,7 +49,7 @@ app.get('/*', function (req, res) {
 });
 
 app.post('/*', function (req, res) {
-  console.log('APP:',util.inspect(req.app, {showHidden: true, depth: null}))
+  console.log('BODY:',util.inspect(req.body, {showHidden: true, depth: null}))
   console.log('BASEURL:',util.inspect(req.baseUrl, {showHidden: true, depth: null}))
   console.log('ORIGINALURL:',util.inspect(req.originalUrl, {showHidden: true, depth: null}))
   console.log('PARAMS:',util.inspect(req.params, {showHidden: true, depth: null}))
