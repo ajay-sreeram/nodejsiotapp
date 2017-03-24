@@ -3,6 +3,7 @@ const express = require("express"),
 const util = require("util");
 //var app = require('./app');
 var https = require('https');
+var bodyParser = require('body-parser');
 
 var sendtoazure = require('./sendtoazure.js');
 
@@ -14,6 +15,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // Indicate which directory static resources
 // (e.g. stylesheets) should be served from.
